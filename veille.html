@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adem Chaabane — Veille technologique</title>
+<meta name="description" content="Veille technologique d'Adem Chaabane (BTS SIO SISR) sur l'authentification multifacteur (MFA) en entreprise.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ================= NAV (2 onglets) ================= -->
+<div class="scroll-progress" aria-hidden="true"></div>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">AC<span class="cursor">_</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#top">Accueil</a></li>
+      <li><a href="index.html#qui">À propos</a></li>
+      <li><a href="index.html#parcours">Parcours</a></li>
+      <li><a href="index.html#competences">Compétences du bloc</a></li>
+      <li><a href="index.html#realisations">Projets</a></li>
+      <li><a href="index.html#projet">Mon projet pro</a></li>
+      <li><a href="veille.html" class="is-active" aria-current="page">Veille</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li class="nav-links-mobile"><a href="cv.pdf" target="_blank" rel="noopener">Télécharger mon CV</a></li>
+      <li class="nav-links-mobile"><a href="https://www.linkedin.com/in/adem-chaabane/" target="_blank" rel="noopener">LinkedIn</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="https://www.linkedin.com/in/adem-chaabane/" class="nav-linkedin" target="_blank" rel="noopener" aria-label="Mon profil LinkedIn">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+        <span>LinkedIn</span>
+      </a>
+      <a href="cv.pdf" class="nav-cta" target="_blank" rel="noopener">Télécharger mon CV</a>
+    </div>
+    <button class="nav-burger" id="navBurger" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ================= HERO VEILLE ================= -->
+<header class="hero hero-small" id="top">
+  <div class="hero-grid"></div>
+  <canvas class="hero-network" aria-hidden="true"></canvas>
+  <div class="hero-blob hero-blob-1"></div>
+  <div class="hero-blob hero-blob-2"></div>
+  <div class="hero-inner">
+    <span class="hero-eyebrow">Veille technologique · depuis septembre 2025 · mise à jour : novembre 2026</span>
+    <h1 class="veille-hero-title">
+      Face à la recrudescence du vol d'identifiants : comment l'<em>authentification
+      multifacteur (MFA)</em> est-elle devenue le pilier indispensable de la sécurité
+      des accès en entreprise&nbsp;?
+    </h1>
+    <ul class="toc" aria-label="Sommaire de la veille">
+      <li><a href="#sujet">Sujet &amp; objectifs</a></li>
+      <li><a href="#methode">Sources &amp; outils</a></li>
+      <li><a href="#journal">Journal de veille</a></li>
+      <li><a href="#synthese">Synthèse</a></li>
+      <li><a href="#apports">Apports</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+
+<!-- ================= SUJET ================= -->
+<section class="section" id="sujet">
+  <div class="section-inner">
+    <div class="section-head">
+      <span class="section-num">01</span>
+      <h2 class="section-title">Sujet, justification et objectifs</h2>
+    </div>
+
+    <div class="veille-grid">
+      <div class="veille-block">
+        <h4>Sujet</h4>
+        <p>
+          L'<strong>authentification multifacteur (MFA)</strong> en entreprise :
+          ses méthodes (SMS, application TOTP, notification push, clé FIDO2,
+          passkeys), les attaques qui la contournent et son évolution vers une
+          authentification sans mot de passe.
+        </p>
+      </div>
+      <div class="veille-block">
+        <h4>Pourquoi ce sujet</h4>
+        <p>
+          En option SISR, je serai chargé de mettre à disposition des services
+          et d'en sécuriser l'accès (VPN, messagerie, serveurs). Mon stage en
+          hardening Linux m'a montré que l'authentification est la première
+          ligne de défense, et mon projet de bachelor en cybersécurité rend ce
+          sujet central.
+        </p>
+      </div>
+      <div class="veille-block">
+        <h4>Objectifs</h4>
+        <ul class="veille-list">
+          <li>Repérer les technologies émergentes : FIDO2, passkeys, authentification sans mot de passe</li>
+          <li>Comprendre les nouvelles attaques : AiTM, MFA fatigue, vol de cookies, device code</li>
+          <li>Renforcer mes compétences : choisir et déployer la bonne méthode MFA selon le contexte</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= METHODE ================= -->
+<section class="section section-alt" id="methode">
+  <div class="section-inner">
+    <div class="section-head">
+      <span class="section-num">02</span>
+      <h2 class="section-title">Sources, outils et stratégie de recherche</h2>
+    </div>
+
+    <h3 class="sub-title">Mes sources et leur fiabilité</h3>
+    <div class="veille-table-wrap">
+      <table class="veille-table bloc-table">
+        <thead><tr><th>Source</th><th>Type</th><th>Pourquoi elle est fiable</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><a href="https://cyber.gouv.fr/" target="_blank" rel="noopener" class="inline-link">ANSSI</a> · <a href="https://www.cert.ssi.gouv.fr/" target="_blank" rel="noopener" class="inline-link">CERT-FR</a></td>
+            <td>Institutionnelle (État français)</td>
+            <td>Autorité nationale de la sécurité des systèmes d'information : recommandations officielles et alertes de sécurité.</td>
+          </tr>
+          <tr>
+            <td><a href="https://www.microsoft.com/en-us/security/blog/" target="_blank" rel="noopener" class="inline-link">Microsoft Security Blog</a> · <a href="https://learn.microsoft.com/fr-fr/entra/identity/authentication/overview-authentication" target="_blank" rel="noopener" class="inline-link">Microsoft Learn</a></td>
+            <td>Éditeur, documentation officielle</td>
+            <td>Informations de première main sur Entra ID et Microsoft 365, très utilisés en entreprise.</td>
+          </tr>
+          <tr>
+            <td><a href="https://fidoalliance.org/" target="_blank" rel="noopener" class="inline-link">FIDO Alliance</a> · <a href="https://www.yubico.com/resources/glossary/fido-2/" target="_blank" rel="noopener" class="inline-link">Yubico</a></td>
+            <td>Consortium de normalisation, fabricant</td>
+            <td>La FIDO Alliance rédige les standards FIDO2/passkeys ; Yubico fabrique les clés de sécurité.</td>
+          </tr>
+          <tr>
+            <td><a href="https://www.it-connect.fr/" target="_blank" rel="noopener" class="inline-link">IT-Connect</a></td>
+            <td>Média spécialisé francophone</td>
+            <td>Rédigé par des administrateurs systèmes, articles datés et sourcés.</td>
+          </tr>
+          <tr>
+            <td><a href="https://thehackernews.com/" target="_blank" rel="noopener" class="inline-link">The Hacker News</a> · SecurityBrief</td>
+            <td>Presse spécialisée cybersécurité</td>
+            <td>Actualité internationale rapide ; je recoupe avec une source officielle avant de retenir une information.</td>
+          </tr>
+          <tr>
+            <td>Blogs d'éditeurs de sécurité (Brandefense, SmarterMSP)</td>
+            <td>Blogs professionnels</td>
+            <td>Analyses techniques détaillées, mais à visée commerciale : je les recoupe systématiquement.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="veille-grid">
+      <div class="veille-block">
+        <h4>Outils</h4>
+        <ul class="veille-list">
+          <li><strong>Feedly</strong> : agrégateur RSS où je suis les flux du CERT-FR, d'IT-Connect, du Microsoft Security Blog et de The Hacker News, classés par dossier</li>
+          <li><strong>Google Alerts</strong> : alertes par e-mail sur mes mots-clés</li>
+          <li><strong>Ce portfolio</strong> : je publie ici mes synthèses datées</li>
+        </ul>
+      </div>
+      <div class="veille-block">
+        <h4>Mots-clés et filtres</h4>
+        <p>
+          <span class="chip">authentification multifacteur</span>
+          <span class="chip">MFA</span>
+          <span class="chip">passkey</span>
+          <span class="chip">FIDO2</span>
+          <span class="chip">AiTM phishing</span>
+          <span class="chip">MFA fatigue</span>
+          <span class="chip">Entra ID</span>
+        </p>
+        <p style="margin-top:12px">Je filtre par date (moins d'un mois), en français et en anglais, et j'écarte les sources sans auteur ni date.</p>
+      </div>
+      <div class="veille-block">
+        <h4>Organisation et régularité</h4>
+        <ul class="veille-list">
+          <li><strong>Chaque semaine</strong> : tri des articles reçus dans Feedly et Google Alerts</li>
+          <li><strong>Chaque mois</strong> : je retiens l'article le plus important et j'en rédige une synthèse avec mon analyse</li>
+          <li>Je vérifie chaque information auprès d'une deuxième source</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= JOURNAL ================= -->
+<section class="section" id="journal">
+  <div class="section-inner">
+    <div class="section-head">
+      <span class="section-num">03</span>
+      <h2 class="section-title">Journal de veille</h2>
+    </div>
+    <p class="section-lead">Synthèses datées, du plus récent au plus ancien. Chaque fiche cite sa source et donne mon analyse personnelle.</p>
+
+    <div class="journal">
+
+      <article class="journal-entry">
+        <div class="journal-date"><span>28</span>août 2026</div>
+        <div class="journal-body">
+          <span class="journal-tag">Menace</span>
+          <h3>Le « device code phishing » : contourner le MFA sans fausse page</h3>
+          <p>
+            L'attaquant démarre une demande de connexion « appareil » auprès de
+            Microsoft et obtient un code court. Il pousse la victime à saisir ce
+            code sur la <em>vraie</em> page Microsoft : elle valide son MFA
+            normalement, et l'attaquant récupère les jetons d'accès. Aucune
+            fausse page, aucun mot de passe volé. Changer le mot de passe ne
+            suffit pas : il faut révoquer les jetons.
+          </p>
+          <p class="journal-analysis"><strong>Mon analyse :</strong> c'est l'attaque qui m'a le plus surpris, car tous les réflexes classiques (« vérifier l'adresse du site ») ne servent à rien. Côté administrateur, la parade est de bloquer ce mode de connexion par accès conditionnel pour les comptes qui n'en ont pas besoin.</p>
+          <a href="https://brandefense.io/blog/phishing-as-a-service-mfa-bypass-device-code/" target="_blank" rel="noopener" class="journal-source">Source : Brandefense, 28/08/2026 →</a>
+        </div>
+      </article>
+
+      <article class="journal-entry">
+        <div class="journal-date"><span>21</span>juil. 2026</div>
+        <div class="journal-body">
+          <span class="journal-tag">Menace</span>
+          <h3>Pourquoi la « MFA fatigue » fonctionne toujours</h3>
+          <p>
+            L'attaquant, qui a déjà le mot de passe, envoie des dizaines de
+            demandes de validation push jusqu'à ce que l'utilisateur accepte
+            pour que ça s'arrête. Des tests d'ingénierie sociale cités dans
+            l'article montrent 15 à 25 % d'acceptation après plusieurs heures,
+            surtout tôt le matin ou tard le soir.
+          </p>
+          <p class="journal-analysis"><strong>Mon analyse :</strong> une notification push « Accepter / Refuser » est donc une faiblesse. En attendant les clés FIDO2, le <em>number matching</em> (taper le nombre affiché à l'écran) et la limitation du nombre de demandes sont des mesures simples à activer. Il faut aussi apprendre aux utilisateurs qu'une demande non sollicitée signifie que leur mot de passe est déjà compromis.</p>
+          <a href="https://smartermsp.com/why-mfa-fatigue-attacks-keep-working/" target="_blank" rel="noopener" class="journal-source">Source : SmarterMSP, 21/07/2026 →</a>
+        </div>
+      </article>
+
+      <article class="journal-entry">
+        <div class="journal-date"><span>14</span>juil. 2026</div>
+        <div class="journal-body">
+          <span class="journal-tag journal-tag-tech">Technologie</span>
+          <h3>Microsoft fait des passkeys la méthode par défaut dans Entra ID</h3>
+          <p>
+            À partir du 1<sup>er</sup> septembre 2026, les utilisateurs qui
+            utilisent le SMS ou l'appel vocal pour leur MFA sont invités à
+            enregistrer une passkey. Le 1<sup>er</sup> février 2027, Microsoft
+            arrête de fournir lui-même l'envoi des SMS et appels
+            d'authentification : il faudra passer par un opérateur tiers payant.
+          </p>
+          <p class="journal-analysis"><strong>Mon analyse :</strong> c'est un tournant concret : l'éditeur le plus répandu en entreprise abandonne le SMS, que l'ANSSI déconseillait déjà. Pour un technicien, cela veut dire accompagner les utilisateurs dans l'enregistrement de leur passkey et anticiper les cas particuliers (comptes partagés, personnes sans smartphone).</p>
+          <a href="https://securitybrief.news/story/microsoft-makes-passkeys-default-for-entra-id-logins" target="_blank" rel="noopener" class="journal-source">Source : SecurityBrief, 14/07/2026 →</a>
+        </div>
+      </article>
+
+      <article class="journal-entry">
+        <div class="journal-date"><span>07</span>mai 2026</div>
+        <div class="journal-body">
+          <span class="journal-tag journal-tag-tech">Technologie</span>
+          <h3>Rapport FIDO Alliance : les passkeys deviennent la norme</h3>
+          <p>
+            Pour la Journée mondiale des passkeys, la FIDO Alliance estime à
+            environ 5 milliards le nombre de passkeys utilisées. 68 % des
+            entreprises interrogées en déploient ou en ont déployé pour leurs
+            employés, mais 57 % utilisent encore des méthodes vulnérables au
+            phishing pour la connexion quotidienne.
+          </p>
+          <p class="journal-analysis"><strong>Mon analyse :</strong> les chiffres viennent d'un organisme qui promeut les passkeys, je les prends donc avec recul. Mais l'écart entre « on déploie » et « on utilise encore des codes » montre qu'il y a beaucoup de travail de migration en entreprise, donc des besoins en techniciens qui maîtrisent ces outils.</p>
+          <a href="https://fidoalliance.org/fido-alliance-reports-accelerating-global-passkey-adoption-on-world-passkey-day-2026/" target="_blank" rel="noopener" class="journal-source">Source : FIDO Alliance, 07/05/2026 →</a>
+        </div>
+      </article>
+
+      <article class="journal-entry">
+        <div class="journal-date"><span>13</span>avr. 2026</div>
+        <div class="journal-body">
+          <span class="journal-tag">Menace</span>
+          <h3>Vol de cookies de session : le MFA ne protège que la connexion</h3>
+          <p>
+            Après la connexion, c'est le cookie de session qui sert
+            d'identifiant. Des logiciels espions (« infostealers ») les volent
+            dans le navigateur et les revendent : l'acheteur entre dans le
+            compte sans mot de passe ni MFA, tant que la session reste valide.
+          </p>
+          <p class="journal-analysis"><strong>Mon analyse :</strong> le MFA n'est pas suffisant seul. Il faut le compléter par des sessions plus courtes, la réauthentification quand le contexte change (pays, appareil) et la sécurité des postes de travail, car c'est là que le cookie est volé.</p>
+          <a href="https://thehackernews.com/expert-insights/2026/04/session-cookie-theft-you-showed-your-id.html" target="_blank" rel="noopener" class="journal-source">Source : The Hacker News, 13/04/2026 →</a>
+        </div>
+      </article>
+
+      <article class="journal-entry">
+        <div class="journal-date"><span>04</span>mars 2026</div>
+        <div class="journal-body">
+          <span class="journal-tag">Menace</span>
+          <h3>Tycoon2FA : un kit de phishing AiTM démantelé</h3>
+          <p>
+            Microsoft décrit Tycoon2FA, un service de phishing « clé en main »
+            vendu dès 120 $ : une fausse page relaie identifiants et code MFA
+            vers le vrai service et capture le cookie de session. Des dizaines
+            de millions d'e-mails par mois, plus de 500 000 organisations
+            visées. Microsoft et Europol ont perturbé son infrastructure.
+          </p>
+          <p class="journal-analysis"><strong>Mon analyse :</strong> l'article confirme que les codes SMS, TOTP et les notifications push peuvent tous être contournés. Seules les méthodes résistantes au phishing (FIDO2, passkeys, Windows Hello) bloquent ce type d'attaque, car la clé vérifie elle-même le nom de domaine du site.</p>
+          <a href="https://www.microsoft.com/en-us/security/blog/2026/03/04/inside-tycoon2fa-how-a-leading-aitm-phishing-kit-operated-at-scale/" target="_blank" rel="noopener" class="journal-source">Source : Microsoft Security Blog, 04/03/2026 →</a>
+        </div>
+      </article>
+
+      <article class="journal-entry">
+        <div class="journal-date"><span>08</span>janv. 2026</div>
+        <div class="journal-body">
+          <span class="journal-tag journal-tag-reg">Obligation</span>
+          <h3>MFA obligatoire pour le centre d'administration Microsoft 365</h3>
+          <p>
+            Depuis le 9 février 2026, impossible de se connecter au centre
+            d'administration Microsoft 365 sans MFA, sans exception. Cette
+            mesure suit l'obligation pour les comptes administrateurs
+            d'octobre 2024 et l'extension aux outils en ligne de commande.
+          </p>
+          <p class="journal-analysis"><strong>Mon analyse :</strong> les comptes administrateurs sont la cible la plus précieuse : en tant que futur technicien, je devrai moi-même utiliser un MFA robuste. Ce n'est plus une bonne pratique, c'est une condition d'accès.</p>
+          <a href="https://www.it-connect.fr/le-mfa-obligatoire-dans-le-centre-administration-microsoft-365-des-fevrier-2026/" target="_blank" rel="noopener" class="journal-source">Source : IT-Connect, 08/01/2026 →</a>
+        </div>
+      </article>
+
+      <article class="journal-entry">
+        <div class="journal-date"><span>05</span>sept. 2025</div>
+        <div class="journal-body">
+          <span class="journal-tag journal-tag-reg">Obligation</span>
+          <h3>Azure : MFA obligatoire aussi en ligne de commande (phase 2)</h3>
+          <p>
+            À partir du 1<sup>er</sup> octobre 2025, Microsoft impose le MFA
+            pour gérer les ressources Azure via Azure CLI, PowerShell, les API
+            et les outils d'Infrastructure as Code. Selon Microsoft, le MFA
+            bloque plus de 99,2 % des compromissions de comptes.
+          </p>
+          <p class="journal-analysis"><strong>Mon analyse :</strong> c'est l'article qui a lancé ma veille. Je pensais que le MFA servait surtout aux utilisateurs ; il s'applique en fait aussi aux administrateurs et à leurs scripts. Les comptes de service (identités managées) ne sont pas concernés, ce qui montre qu'il faut bien distinguer humains et machines.</p>
+          <a href="https://azure.microsoft.com/en-us/blog/azure-mandatory-multifactor-authentication-phase-2-starting-in-october-2025/" target="_blank" rel="noopener" class="journal-source">Source : Microsoft Azure Blog, 05/09/2025 →</a>
+        </div>
+      </article>
+
+    </div>
+
+    <p class="journal-ref">
+      Document de référence utilisé tout au long de la veille :
+      <a href="https://www.it-connect.fr/nouveau-guide-anssi-sur-les-mots-de-passe-et-lauthentification-multifacteur/" target="_blank" rel="noopener" class="inline-link">guide ANSSI « Recommandations relatives à l'authentification multifacteur et aux mots de passe »</a>
+      (42 recommandations ; le SMS y est déconseillé comme second facteur à cause du SIM swapping).
+    </p>
+  </div>
+</section>
+
+<!-- ================= SYNTHESE ================= -->
+<section class="section section-alt" id="synthese">
+  <div class="section-inner">
+    <div class="section-head">
+      <span class="section-num">04</span>
+      <h2 class="section-title">Synthèse : comparatif des méthodes MFA</h2>
+    </div>
+
+    <div class="veille-table-wrap">
+      <table class="veille-table">
+        <thead>
+          <tr><th>Méthode</th><th>Sécurité</th><th>Facilité d'usage</th><th>Coût</th><th>Résiste au phishing AiTM ?</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>SMS</td><td><span class="level level-low">Faible</span></td><td><span class="level level-high">Excellente</span></td><td>Faible</td><td>Non (+ SIM swapping)</td></tr>
+          <tr><td>Application (TOTP)</td><td><span class="level level-mid">Moyenne</span></td><td><span class="level level-mid">Bonne</span></td><td>Gratuit</td><td>Non</td></tr>
+          <tr><td>Notification push</td><td><span class="level level-mid">Bonne</span></td><td><span class="level level-high">Excellente</span></td><td>Gratuit</td><td>Non (MFA fatigue)</td></tr>
+          <tr><td>Passkey</td><td><span class="level level-high">Très élevée</span></td><td><span class="level level-high">Excellente</span></td><td>Gratuit (appareil existant)</td><td>Oui</td></tr>
+          <tr><td>Clé FIDO2</td><td><span class="level level-high">Maximale</span></td><td><span class="level level-mid">Moyenne</span></td><td>Élevé (30-60 €/clé)</td><td>Oui</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="veille-grid">
+      <div class="veille-block">
+        <h4>Constat clé</h4>
+        <p>
+          Les attaquants ne devinent plus les codes : ils interceptent la
+          session (AiTM), volent les cookies, épuisent l'utilisateur de
+          notifications ou le font valider sur la vraie page (device code).
+          Un MFA « classique » ne suffit plus.
+        </p>
+      </div>
+      <div class="veille-block">
+        <h4>Tendance de fond</h4>
+        <p>
+          Le standard <strong>FIDO2/WebAuthn</strong> résiste au phishing grâce
+          à une signature cryptographique liée au domaine du site. Les
+          <strong>passkeys</strong> le rendent accessible à tous et deviennent
+          la méthode par défaut chez Microsoft depuis septembre 2026.
+        </p>
+      </div>
+      <div class="veille-block">
+        <h4>Recommandations</h4>
+        <ul class="veille-list">
+          <li>Généraliser le MFA sur messagerie, VPN et accès administrateurs</li>
+          <li>Abandonner le SMS au profit des passkeys ou d'une application</li>
+          <li>Activer le number matching contre la MFA fatigue</li>
+          <li>Clés FIDO2 pour les comptes critiques (admins, direction, RH)</li>
+          <li>Bloquer le flux « device code » s'il n'est pas utilisé</li>
+          <li>Former les équipes à refuser toute demande non sollicitée</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= APPORTS ================= -->
+<section class="section contact" id="apports">
+  <div class="section-inner">
+    <div class="section-head">
+      <span class="section-num">05</span>
+      <h2 class="section-title">Ce que ma veille m'a apporté</h2>
+    </div>
+
+    <div class="veille-grid">
+      <div class="veille-block">
+        <h4>Connaissances</h4>
+        <p>
+          Je sais maintenant expliquer pourquoi toutes les méthodes MFA ne se
+          valent pas, et quelles attaques visent chacune d'elles. Je fais la
+          différence entre l'authentification (la connexion) et la session
+          (ce qui suit), deux surfaces d'attaque distinctes.
+        </p>
+      </div>
+      <div class="veille-block">
+        <h4>Liens avec mes réalisations</h4>
+        <ul class="veille-list">
+          <li><strong>Stage hardening Debian</strong> : mêmes logiques côté serveur — authentification SSH par clé plutôt que par mot de passe</li>
+          <li><strong>Projet pfSense</strong> : un accès VPN au réseau doit être protégé par un second facteur</li>
+          <li><strong>Windows Server / AD</strong> : comprendre comment un annuaire s'intègre à une solution MFA</li>
+        </ul>
+      </div>
+      <div class="veille-block">
+        <h4>Lien avec mon projet</h4>
+        <p>
+          La sécurité des accès est au cœur de la cybersécurité. Cette veille
+          m'a appris à suivre une menace dans le temps et à recouper mes
+          sources — une méthode que je réutiliserai en bachelor cybersécurité
+          et en entreprise. Elle m'a aussi poussé à lire régulièrement en
+          anglais technique.
+        </p>
+      </div>
+    </div>
+
+    <div class="veille-sources">
+      <span class="veille-sources-label">Toutes les sources</span>
+      <div class="veille-sources-list">
+        <a href="https://www.cert.ssi.gouv.fr/" target="_blank" rel="noopener">CERT-FR</a>
+        <a href="https://www.it-connect.fr/nouveau-guide-anssi-sur-les-mots-de-passe-et-lauthentification-multifacteur/" target="_blank" rel="noopener">Guide ANSSI MFA</a>
+        <a href="https://azure.microsoft.com/en-us/blog/azure-mandatory-multifactor-authentication-phase-2-starting-in-october-2025/" target="_blank" rel="noopener">Microsoft Azure Blog</a>
+        <a href="https://www.it-connect.fr/le-mfa-obligatoire-dans-le-centre-administration-microsoft-365-des-fevrier-2026/" target="_blank" rel="noopener">IT-Connect</a>
+        <a href="https://www.microsoft.com/en-us/security/blog/2026/03/04/inside-tycoon2fa-how-a-leading-aitm-phishing-kit-operated-at-scale/" target="_blank" rel="noopener">Microsoft Security Blog</a>
+        <a href="https://thehackernews.com/expert-insights/2026/04/session-cookie-theft-you-showed-your-id.html" target="_blank" rel="noopener">The Hacker News</a>
+        <a href="https://fidoalliance.org/fido-alliance-reports-accelerating-global-passkey-adoption-on-world-passkey-day-2026/" target="_blank" rel="noopener">FIDO Alliance</a>
+        <a href="https://securitybrief.news/story/microsoft-makes-passkeys-default-for-entra-id-logins" target="_blank" rel="noopener">SecurityBrief</a>
+        <a href="https://smartermsp.com/why-mfa-fatigue-attacks-keep-working/" target="_blank" rel="noopener">SmarterMSP</a>
+        <a href="https://brandefense.io/blog/phishing-as-a-service-mfa-bypass-device-code/" target="_blank" rel="noopener">Brandefense</a>
+        <a href="https://learn.microsoft.com/fr-fr/entra/identity/authentication/overview-authentication" target="_blank" rel="noopener">Microsoft Learn</a>
+        <a href="https://www.yubico.com/resources/glossary/fido-2/" target="_blank" rel="noopener">Yubico — FIDO2</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span>© 2026 Adem Chaabane · <a href="index.html">Accueil &amp; parcours</a> · <a href="veille.html">Veille</a></span>
+    <span class="footer-status"><span class="dot dot-up"></span> Disponible pour alternance</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
